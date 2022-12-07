@@ -2,8 +2,8 @@
     "log": {
         "loglevel": "warning",
         "type": "File",
-        "access": "D:\\OtherSoft\\V2ray\\Logs\\access.log",
-        "error": "D:\\OtherSoft\\V2ray\\Logs\\error.log"
+        "access": "D:\\OtherSoft\\V2ray\\Logs\\tls_base_access.log",
+        "error": "D:\\OtherSoft\\V2ray\\Logs\\tls_base_error.log"
       },
     "inbounds": [
       {
@@ -20,7 +20,7 @@
         },
         "settings": {
           "auth": "noauth",
-          "udp": true,
+          "udp": false,
           "allowTransparent": false
         }
       },

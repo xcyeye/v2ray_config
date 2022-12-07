@@ -2,12 +2,13 @@
     "log": {
       "loglevel": "warning",
       "type": "File",
-      "access": "/usr/local/etc/v2ray/logs/access.log",
-      "error": "/usr/local/etc/v2ray/logs/error.log"
+      "access": "/usr/local/etc/v2ray/logs/tls_base_access.log",
+      "error": "/usr/local/etc/v2ray/logs/tls_base_error.log"
     },
     "inbounds": [
       {
         "port": 443,
+        "listen":"127.0.0.1",
         "protocol": "vmess",
         "settings": {
           "clients": [

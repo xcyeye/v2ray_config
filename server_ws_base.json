@@ -1,0 +1,31 @@
+{
+    "log": {
+        "loglevel": "warning",
+        "type": "File",
+        "access": "/usr/local/etc/v2ray/logs/ws_access.log",
+        "error": "/usr/local/etc/v2ray/logs/ws_error.log"
+    },
+    "inbounds": [
+      {
+        "port": 10999,
+        "protocol": "vmess",
+        "settings": {
+          "clients": [
+            {
+              "id": "65204e58-1376-4412-9869-89096ffe167e",
+              "alterId": 0
+            }
+          ]
+        },
+        "streamSettings": {
+          "network":"ws"
+        }
+      }
+    ],
+    "outbounds": [
+      {
+        "protocol": "freedom",
+        "settings": {}
+      }
+    ]
+  }

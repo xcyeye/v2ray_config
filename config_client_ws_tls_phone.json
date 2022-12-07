@@ -1,10 +1,4 @@
 {
-    "log": {
-        "loglevel": "warning",
-        "type": "File",
-        "access": "./access.log",
-        "error": "./error.log"
-      },
     "inbounds": [
       {
         "tag": "socks",
