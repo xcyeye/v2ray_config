@@ -1,4 +1,10 @@
 {
+    "log": {
+        "loglevel": "warning",
+        "type": "File",
+        "access": "/usr/local/etc/v2ray/logs/base_access.log",
+        "error": "/usr/local/etc/v2ray/logs/base_error.log"
+    },
     "inbounds": [
         {
             "port": 10999,

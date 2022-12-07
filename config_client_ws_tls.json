@@ -2,8 +2,8 @@
     "log": {
         "loglevel": "warning",
         "type": "File",
-        "access": "D:\\OtherSoft\\V2ray\\Logs\\access.log",
-        "error": "D:\\OtherSoft\\V2ray\\Logs\\error.log"
+        "access": "D:\\OtherSoft\\V2ray\\Logs\\ws_tls_web_access.log",
+        "error": "D:\\OtherSoft\\V2ray\\Logs\\ws_tls_web_error.log"
       },
     "inbounds": [
       {

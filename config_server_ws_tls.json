@@ -2,8 +2,8 @@
     "log": {
       "loglevel": "warning",
       "type": "File",
-      "access": "/usr/local/etc/v2ray/logs/access.log",
-      "error": "/usr/local/etc/v2ray/logs/error.log"
+      "access": "/usr/local/etc/v2ray/logs/ws_tls_web_access.log",
+      "error": "/usr/local/etc/v2ray/logs/ws_tls_web_error.log"
     },
     "inbounds": [
       {
