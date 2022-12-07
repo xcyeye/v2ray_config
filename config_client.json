@@ -51,11 +51,11 @@
           "vnext": [
             {
               "address": "v2ray.xcye.xyz",
-              "port": 10999,
+              "port": 443,
               "users": [
                 {
                   "id": "65204e58-1376-4412-9869-89096ffe167e",
-                  "alterId": 64,
+                  "alterId": 0,
                   "email": "t@t.tt",
                   "security": "auto"
                 }
