@@ -1,34 +1,109 @@
 {
+    "log": {
+        "loglevel": "warning",
+        "type": "File",
+        "access": "D:\\OtherSoft\\V2ray\\Logs\\access.log",
+        "error": "D:\\OtherSoft\\V2ray\\Logs\\error.log"
+      },
     "inbounds": [
       {
-        "port": 1080,
+        "tag": "socks",
+        "port": 10808,
+        "listen": "127.0.0.1",
         "protocol": "socks",
         "sniffing": {
           "enabled": true,
-          "destOverride": ["http", "tls"]
+          "destOverride": [
+            "http",
+            "tls"
+          ]
         },
         "settings": {
-          "auth": "noauth"
+          "auth": "noauth",
+          "udp": true,
+          "allowTransparent": false
+        }
+      },
+      {
+        "tag": "http",
+        "port": 10809,
+        "listen": "127.0.0.1",
+        "protocol": "http",
+        "sniffing": {
+          "enabled": true,
+          "destOverride": [
+            "http",
+            "tls"
+          ]
+        },
+        "settings": {
+          "auth": "noauth",
+          "udp": true,
+          "allowTransparent": false
         }
       }
     ],
     "outbounds": [
       {
+        "tag": "proxy",
         "protocol": "vmess",
         "settings": {
           "vnext": [
             {
-              "address": "20.243.155.118",
+              "address": "v2ray.xcye.xyz",
               "port": 10999,
               "users": [
                 {
                   "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
-                  "alterId": 0
+                  "alterId": 64,
+                  "email": "t@t.tt",
+                  "security": "auto"
                 }
               ]
             }
           ]
+        },
+        "streamSettings": {
+            "network": "tcp",
+            "security": "tls"
+        },
+        "mux": {
+          "enabled": true,
+          "concurrency": -1
+        }
+      },
+      {
+        "tag": "direct",
+        "protocol": "freedom",
+        "settings": {}
+      },
+      {
+        "tag": "block",
+        "protocol": "blackhole",
+        "settings": {
+          "response": {
+            "type": "http"
+          }
         }
       }
-    ]
+    ],
+    "routing": {
+      "domainStrategy": "IPIfNonMatch",
+      "rules": [
+        {
+          "type": "field",
+          "inboundTag": [
+            "api"
+          ],
+          "outboundTag": "api",
+          "enabled": true
+        },
+        {
+          "type": "field",
+          "port": "0-65535",
+          "outboundTag": "proxy",
+          "enabled": true
+        }
+      ]
+    }
   }

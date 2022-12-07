@@ -13,9 +13,21 @@
           "clients": [
             {
               "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
-              "alterId": 0
+              "alterId": 64
             }
           ]
+        },
+        "streamSettings": {
+          "network": "tcp",
+          "security": "tls",
+          "tlsSettings": {
+            "certificates": [
+              {
+                "certificateFile": "/usr/local/etc/v2ray/cert/v2ray.crt",
+                "keyFile": "/usr/local/etc/v2ray/cert/v2ray.key"
+              }
+            ]
+          }
         }
       }
     ],
