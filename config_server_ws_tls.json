@@ -1,13 +1,19 @@
 {
+    "log": {
+      "loglevel": "warning",
+      "type": "File",
+      "access": "/usr/local/etc/v2ray/logs/access.log",
+      "error": "/usr/local/etc/v2ray/logs/error.log"
+    },
     "inbounds": [
       {
-        "port": 10000,
+        "port": 10999,
         "listen":"127.0.0.1",
         "protocol": "vmess",
         "settings": {
           "clients": [
             {
-              "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+              "id": "65204e58-1376-4412-9869-89096ffe167e",
               "alterId": 0
             }
           ]

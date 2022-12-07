@@ -2,13 +2,15 @@
     "inbounds": [
       {
         "port": 1080,
+        "listen": "127.0.0.1",
         "protocol": "socks",
         "sniffing": {
           "enabled": true,
           "destOverride": ["http", "tls"]
         },
         "settings": {
-          "auth": "noauth"
+          "auth": "noauth",
+          "udp": false
         }
       }
     ],
@@ -18,11 +20,11 @@
         "settings": {
           "vnext": [
             {
-              "address": "mydomain.me", // tls 需要域名，所以这里应该填自己的域名
+              "address": "mydomain.me",
               "port": 443,
               "users": [
                 {
-                  "id": "23ad6b10-8d1a-40f7-8ad0-e3e35cd38297",
+                  "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
                   "alterId": 64
                 }
               ]
@@ -30,8 +32,11 @@
           ]
         },
         "streamSettings": {
-          "network": "tcp",
-          "security": "tls" // 客户端的 security 也要设置为 tls
+          "network": "ws",
+          "security": "tls",
+          "wsSettings": {
+            "path": "/ray"
+          }
         }
       }
     ]
