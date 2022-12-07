@@ -1,62 +1,34 @@
 {
-    "log": {
-        "loglevel": "warning"
-    },
-    "routing": {
-        "domainStrategy": "AsIs",
-        "rules": [
-            {
-                "type": "field",
-                "ip": [
-                    "geoip:private"
-                ],
-                "outboundTag": "direct"
-            }
-        ]
-    },
     "inbounds": [
-        {
-            "listen": "127.0.0.1",
-            "port": "1080",
-            "protocol": "socks",
-            "settings": {
-                "auth": "noauth",
-                "udp": true,
-                "ip": "127.0.0.1"
-            }
+      {
+        "port": 1080,
+        "protocol": "socks",
+        "sniffing": {
+          "enabled": true,
+          "destOverride": ["http", "tls"]
         },
-        {
-            "listen": "127.0.0.1",
-            "port": "1081",
-            "protocol": "http"
+        "settings": {
+          "auth": "noauth"
         }
+      }
     ],
     "outbounds": [
-        {
-            "protocol": "vmess",
-            "settings": {
-                "vnext": [
-                    {
-                        "address": "20.243.155.118",
-                        "port": 10999,
-                        "users": [
-                            {
-                                "id": "cb6e67c5-4281-41b2-8c92-fd1b62116039",
-                                "security": "none"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "tls"
-            },
-            "tag": "proxy"
-        },
-        {
-            "protocol": "freedom",
-            "tag": "direct"
+      {
+        "protocol": "vmess",
+        "settings": {
+          "vnext": [
+            {
+              "address": "v2ray.xcye.xyz",
+              "port": 10999,
+              "users": [
+                {
+                  "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+                  "alterId": 0
+                }
+              ]
+            }
+          ]
         }
+      }
     ]
-}
+  }

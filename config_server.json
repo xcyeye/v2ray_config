@@ -1,59 +1,22 @@
 {
-    "log": {
-        "loglevel": "warning",
-        "type": "File",
-        "access": "/usr/local/etc/v2ray/logs/access.log",
-        "error": "/usr/local/etc/v2ray/logs/error.log"
-    },
-    "routing": {
-        "domainStrategy": "AsIs",
-        "rules": [
-            {
-                "type": "field",
-                "ip": [
-                    "geoip:private"
-                ],
-                "outboundTag": "block"
-            }
-        ]
-    },
     "inbounds": [
-        {
-            "listen": "0.0.0.0",
-            "port": 10999,
-            "protocol": "vmess",
-            "settings": {
-                "clients": [
-                    {
-                        "id": "f6c2e97a-2655-46ad-a8be-221951cebdd7",
-                        "level": 0,
-                        "alterId": 4,
-                        "email": "2291308094@qq.com"
-                    }
-                ]
-            },
-            "streamSettings": {
-                "network": "ws",
-                "security": "tls",
-                "tlsSettings": {
-                    "certificates": [
-                        {
-                            "certificateFile": "/usr/local/etc/v2ray/config/cert/v2ray.crt",
-                            "keyFile": "/usr/local/etc/v2ray/config/cert/v2ray.key"
-                        }
-                    ]
-                }
+      {
+        "port": 10999,
+        "protocol": "vmess",
+        "settings": {
+          "clients": [
+            {
+              "id": "b831381d-6324-4d53-ad4f-8cda48b30811",
+              "alterId": 0
             }
+          ]
         }
+      }
     ],
     "outbounds": [
-        {
-            "protocol": "freedom",
-            "tag": "direct"
-        },
-        {
-            "protocol": "blackhole",
-            "tag": "block"
-        }
+      {
+        "protocol": "freedom",
+        "settings": {}
+      }
     ]
-}
+  }
